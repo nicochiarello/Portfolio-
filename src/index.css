@@ -1058,13 +1058,17 @@ a i:hover {
     list-style: none;
     border-top: 1px solid white;
   }
+  .btn-form{
+    width: fit-content;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 @media (max-width: 840px) and (min-width: 480px) {
   .navbar {
     background-color: #212c43;
-    position: fixed;
-    top: 0%;
+
     width: 100vw;
   }
   .intro {
@@ -1190,5 +1194,6 @@ a i:hover {
     list-style: none;
     border-top: 1px solid white;
   }
+
 
 }

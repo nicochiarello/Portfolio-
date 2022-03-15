@@ -141,7 +141,7 @@ function App() {
               <span>
                 {english
                   ? "Many projects"
-                  : "Ecommerces, Diarios digitales etc."}
+                  : "Ecommerces, etc."}
               </span>
             </div>
             <div className="about-boxes">
