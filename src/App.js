@@ -8,7 +8,7 @@ import cc from "./assets/cartcases.jpg";
 import gy from "./assets/gayatry.jpg";
 import translate from "./assets/translate.png";
 import emailjs from "@emailjs/browser";
-import useClickout from "react-use-clickout";
+
 
 function App() {
   const [btnOpened, setBtnOpened] = useState(false);
