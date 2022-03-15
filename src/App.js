@@ -9,11 +9,9 @@ import gy from "./assets/gayatry.jpg";
 import translate from "./assets/translate.png";
 import emailjs from "@emailjs/browser";
 
-
 function App() {
   const [btnOpened, setBtnOpened] = useState(false);
   const [english, setEnglish] = useState(true);
-  
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -89,7 +87,10 @@ function App() {
 
       {btnOpened ? (
         <div className="navbar-mobile">
-          <ul onClick={()=>setBtnOpened(false)} className="navbar-mobile-items">
+          <ul
+            onClick={() => setBtnOpened(false)}
+            className="navbar-mobile-items"
+          >
             <li>
               <a href="#About">{english ? "About" : "Sobre mí"}</a>
             </li>
@@ -112,8 +113,16 @@ function App() {
         <p>{english ? "Hello I´m" : "Hola Soy"}</p>
         <h1>Nicolas Chiarello</h1>
         <span>Fullstack MERN Developer</span>
-        <div className="btn1">{english ? "Download CV" : "Descargar CV"}</div>
-        <div className="btn2">{english ? "Contact me" : "Contáctame"}</div>
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/104FPOT9AwgD2TSODTGM4uFPVhBDEbcnk/view?usp=sharing"
+          className="btn1"
+        >
+          {english ? "Download CV" : "Descargar CV"}
+        </a>
+        <div className="btn2">
+          <a href="#Contact">{english ? "Contact me" : "Contáctame"}</a>
+        </div>
         <div className="img-container">
           <img src={profile} alt="" />
         </div>
@@ -138,11 +147,7 @@ function App() {
             <div className="about-boxes">
               <i class="bx bxs-briefcase-alt"></i>
               <p>{english ? "Completed" : "Proyectos"}</p>
-              <span>
-                {english
-                  ? "Many projects"
-                  : "Ecommerces, etc."}
-              </span>
+              <span>{english ? "Many projects" : "Ecommerces, etc."}</span>
             </div>
             <div className="about-boxes">
               <i class="bx bx-book-bookmark"></i>
@@ -157,7 +162,7 @@ function App() {
                 : "Para mi la programación no es solo un trabajo, lo considero un arte donde puedo crear y plasmar todo tipo de ideas. Disfruto mucho los desafíos que me propone, desde crear una api hasta diseñar todo un front, la programación me brindó grandes aprendizajes y una forma de vivir que verdaderamente me gusta. En esta página presento mi perfil y espero que te guste!"}
             </p>
           </div>
-          <div className="btn3">CV</div>
+          <a target="_blank" href="https://drive.google.com/file/d/104FPOT9AwgD2TSODTGM4uFPVhBDEbcnk/view?usp=sharing" className="btn3">CV</a>
         </div>
       </div>
       <div id="Portfolio" className="portfolio">

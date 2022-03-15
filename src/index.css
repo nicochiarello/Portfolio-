@@ -169,12 +169,22 @@ a i:hover {
   cursor: pointer;
   color: #776fd2;
 }
+.btn1 a{
+  color: #776fd2;
+}
 
 .btn1:hover {
   color: white;
-  background-color: #776fd2;
+  /* background-color: #776fd2; */
   border: 3px solid white;
+  background-color:#776fd2 ;
 }
+.btn1:hover a{
+  color: white;
+  /* background-color: #776fd2; */
+  
+}
+
 
 .btn2 {
   width: 15rem;
@@ -192,11 +202,19 @@ a i:hover {
   font-size: 30px;
   line-height: 35px;
 }
+.btn2 a{
+  color: rgba(0, 0, 0, 1);
+}
 
 .btn2:hover {
   color: white;
   background-color: #776fd2;
   border: 3px solid white;
+}
+.btn2:hover a{
+  color: white;
+  background-color: #776fd2;
+  
 }
 
 .img-container {
