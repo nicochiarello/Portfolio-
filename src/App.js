@@ -162,7 +162,13 @@ function App() {
                 : "Para mi la programación no es solo un trabajo, lo considero un arte donde puedo crear y plasmar todo tipo de ideas. Disfruto mucho los desafíos que me propone, desde crear una api hasta diseñar todo un front, la programación me brindó grandes aprendizajes y una forma de vivir que verdaderamente me gusta. En esta página presento mi perfil y espero que te guste!"}
             </p>
           </div>
-          <a target="_blank" href="https://drive.google.com/file/d/104FPOT9AwgD2TSODTGM4uFPVhBDEbcnk/view?usp=sharing" className="btn3">CV</a>
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/104FPOT9AwgD2TSODTGM4uFPVhBDEbcnk/view?usp=sharing"
+            className="btn3"
+          >
+            CV
+          </a>
         </div>
       </div>
       <div id="Portfolio" className="portfolio">
@@ -179,7 +185,7 @@ function App() {
             <h4>
               Demo <i class="bx bx-right-arrow-alt"></i>
             </h4>
-            <a href="https://github.com/nicochiarello/Luj-n-en-5-">
+            <a href="https://github.com/nicochiarello/Lujan-en-5">
               Code <i class="bx bxl-github"></i>
             </a>
           </div>
