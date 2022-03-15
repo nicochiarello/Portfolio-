@@ -2,28 +2,60 @@ import "./App.css";
 import React, { useState } from "react";
 import profile from "./perfil.jpg";
 import emoji from "./emoji.jpg";
-import l5 from "./assets/l5.jpg"
-import gd from "./assets/gd.jpg"
-import cc from "./assets/cartcases.jpg"
-import gy from "./assets/gayatry.jpg"
-import translate from "./assets/translate.png"
+import l5 from "./assets/l5.jpg";
+import gd from "./assets/gd.jpg";
+import cc from "./assets/cartcases.jpg";
+import gy from "./assets/gayatry.jpg";
+import translate from "./assets/translate.png";
+import emailjs from "@emailjs/browser";
+import useClickout from "react-use-clickout";
 
 function App() {
   const [btnOpened, setBtnOpened] = useState(false);
   const [english, setEnglish] = useState(true);
+  
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_rkyii5i",
+        "template_v7ytzp5",
+        e.target,
+        "pX2NA1fgSXR77xWDZ"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <div>
       <div className="nav">
         <div className="nav-items">
           <div onClick={() => setEnglish(!english)} className="translate">
             <img className="translate-icon" src={translate} alt="" />
-            <p>{english ? "English" : "Español"}</p>
-            <i class="bx bx-chevron-down"></i>
+            <p className="language">{english ? "English" : "Español"}</p>
+            <i class="bx bx-transfer"></i>
           </div>
-          <i class="bx bx-briefcase-alt"></i>
-          <i class="bx bxs-graduation"></i>
-          <i class="bx bxs-contact"></i>
-         
+          <a href="#About">
+            <i class="bx bx-user"></i>
+          </a>
+          <a href="#Portfolio">
+            <i class="bx bx-briefcase-alt"></i>
+          </a>
+          <a href="#Knowledge">
+            <i class="bx bxs-graduation"></i>
+          </a>
+          <a href="#Contact">
+            <i class="bx bxs-contact"></i>
+          </a>
         </div>
       </div>
       <div className="navbar">
@@ -31,10 +63,18 @@ function App() {
           <h3>Nicolas</h3>
         </div>
         <ul className="navbar-items">
-          <li>{english ? "About" : "Sobre mí"}</li>
-          <li>{english ? "Work" : "Trabajo"}</li>
-          <li>{english ? "Knowledge" : "Conocimiento"}</li>
-          <li>{english ? "Contact" : "Contacto"}</li>
+          <li>
+            <a href="#About">{english ? "About" : "Sobre mí"}</a>
+          </li>
+          <li>
+            <a href="#Portfolio">{english ? "Work" : "Trabajo"}</a>
+          </li>
+          <li>
+            <a href="#Knowledge">{english ? "Knowledge" : "Conocimiento"}</a>
+          </li>
+          <li>
+            <a href="#Contact">{english ? "Contact" : "Contacto"}</a>
+          </li>
         </ul>
         <ul className="navbar-menu">
           <li>
@@ -49,11 +89,19 @@ function App() {
 
       {btnOpened ? (
         <div className="navbar-mobile">
-          <ul className="navbar-mobile-items">
-            <li>{english ? "About" : "Sobre mí"}</li>
-            <li>{english ? "Work" : "Trabajo"}</li>
-            <li>{english ? "Knowledge" : "Conocimiento"}</li>
-            <li>{english ? "Contact" : "Contacto"}</li>
+          <ul onClick={()=>setBtnOpened(false)} className="navbar-mobile-items">
+            <li>
+              <a href="#About">{english ? "About" : "Sobre mí"}</a>
+            </li>
+            <li>
+              <a href="#Portfolio">{english ? "Work" : "Trabajo"}</a>
+            </li>
+            <li>
+              <a href="#Knowledge">{english ? "Knowledge" : "Conocimiento"}</a>
+            </li>
+            <li>
+              <a href="#Contact">{english ? "Contact" : "Contacto"}</a>
+            </li>
           </ul>
         </div>
       ) : (
@@ -71,7 +119,7 @@ function App() {
         </div>
       </div>
 
-      <div className="about-title">
+      <div id="About" className="about-title">
         <h2>{english ? "About" : "Sobre mí"}</h2>
       </div>
       <div className="about-container">
@@ -112,57 +160,69 @@ function App() {
           <div className="btn3">CV</div>
         </div>
       </div>
-      <div className="portfolio">
+      <div id="Portfolio" className="portfolio">
         <h2>{english ? "My portfolio" : "Mis proyectos"}</h2>
         <span>{english ? "Recent Works" : "Trabajos recientes"}</span>
       </div>
       <div className="portfolio-grid">
-        <div className="portfolio-item">
+        <a href="https://www.lujanen5.com/" className="portfolio-item">
           <div className="portfolio-item__img">
             <img src={l5} alt="" />
           </div>
           <div className="portfolio-item__info">
             <h3>Lujan en 5' Newspaper</h3>
-            <span>
+            <h4>
               Demo <i class="bx bx-right-arrow-alt"></i>
-            </span>
+            </h4>
+            <a href="https://github.com/nicochiarello/Luj-n-en-5-">
+              Code <i class="bx bxl-github"></i>
+            </a>
           </div>
-        </div>
-        <div className="portfolio-item">
+        </a>
+        <a href="https://guitardev.herokuapp.com/" className="portfolio-item">
           <div className="portfolio-item__img">
             <img src={gd} alt="" />
           </div>
           <div className="portfolio-item__info">
-            <h3>Lujan en 5' Newspaper</h3>
-            <span>
+            <h3>GuitarDev (Ecommerce)</h3>
+            <h4>
               Demo <i class="bx bx-right-arrow-alt"></i>
-            </span>
+            </h4>
+            <a href="https://github.com/nicochiarello/GuitarDev-Version-Final">
+              Code <i class="bx bxl-github"></i>
+            </a>
           </div>
-        </div>
-        <div className="portfolio-item">
+        </a>
+        <a href="https://cart-cases.netlify.app/" className="portfolio-item">
           <div className="portfolio-item__img">
             <img src={cc} alt="" />
           </div>
           <div className="portfolio-item__info">
-            <h3>Lujan en 5' Newspaper</h3>
-            <span>
+            <h3>Cart Cases</h3>
+            <h4>
               Demo <i class="bx bx-right-arrow-alt"></i>
-            </span>
+            </h4>
+            <a href="https://github.com/nicochiarello/CartCases-Final">
+              Code <i class="bx bxl-github"></i>
+            </a>
           </div>
-        </div>
-        <div className="portfolio-item">
+        </a>
+        <a href="#3" className="portfolio-item">
           <div className="portfolio-item__img">
             <img src={gy} alt="" />
           </div>
           <div className="portfolio-item__info">
-            <h3>Lujan en 5' Newspaper</h3>
-            <span>
+            <h3>Gayatry (Ecommerce)</h3>
+            <h4>
               Demo <i class="bx bx-right-arrow-alt"></i>
-            </span>
+            </h4>
+            <h4>
+              Code <i class="bx bxl-github"></i>
+            </h4>
           </div>
-        </div>
+        </a>
       </div>
-      <div className="knowledge-title">
+      <div id="Knowledge" className="knowledge-title">
         <h2>{english ? "Knowledge" : "Conocimientos"}</h2>
       </div>
       <div className="knowledge-container">
@@ -199,33 +259,44 @@ function App() {
         <h2>{english ? "Contact Me" : "Contáctame"}</h2>
       </div>
 
-      <div className="contact-container">
+      <div id="Contact" className="contact-container">
         <div className="contact-boxes">
           <h4>{english ? "Talk to me" : "Datos de contacto"}</h4>
           <div className="contact-box">
             <i class="bx bx-mail-send"></i>
             <h3>Email</h3>
             <p>nicolasch.fcm@gmail.com</p>
-            <span>{english ? "Write me" : "Escríbeme"}</span>
+            <a href="mailto: nicolasch.fcm@gmail.com">
+              {english ? "Write me" : "Escríbeme"}
+            </a>
           </div>
           <div className="contact-box">
             <i class="bx bxl-whatsapp"></i>
             <h3>WhatsApp</h3>
             <p>+5492616930795</p>
-            <span>{english ? "Write me" : "Escríbeme"}</span>
+            <a href="https://wa.me/5492616930795?text=Hi!">
+              {english ? "Write me" : "Escríbeme"}
+            </a>
           </div>
           <div className="contact-box">
             <i class="bx bxl-linkedin-square"></i>
             <h3>LinkedIn</h3>
             <p>nicolas-chiarello</p>
-            <span>Go to my profile</span>
+            <a href="https://www.linkedin.com/in/nicolas-chiarello-ba5509208/">
+              {english ? "Go to my profile" : "Ir a mi perfil"}
+            </a>
           </div>
         </div>
-        <div className="form-container">
+        <form onSubmit={sendEmail} className="form-container">
           <h3>{english ? "Write me your project" : "Hazme tu consulta"}</h3>
 
           <div className="name-form-container">
-            <input placeholder="Insert your name" className="form-name"></input>
+            <input
+              type="text"
+              name="name"
+              placeholder="Insert your name"
+              className="form-name"
+            ></input>
 
             <div className="name">{english ? "Name" : "Nombre"}</div>
           </div>
@@ -233,26 +304,29 @@ function App() {
             <input
               placeholder="Insert your email"
               className="form-name"
+              type="text"
+              name="email"
             ></input>
 
             <div className="email">Mail</div>
           </div>
           <div className="name-form-container">
-            <input
+            <textarea
+              name="message"
               placeholder={
                 english ? "Write your project" : "Escriba su proyecto"
               }
               className="form-text"
-            ></input>
+            ></textarea>
 
             <div className="project">{english ? "Project" : "Proyecto"}</div>
           </div>
           <div className="btn-form-container">
-            <div className="btn-form">
+            <button type="submit" className="btn-form">
               <p>{english ? "SEND" : "Enviar"}</p>
-            </div>
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
