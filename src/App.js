@@ -5,7 +5,7 @@ import emoji from "./emoji.jpg";
 import l5 from "./assets/l5.jpg";
 import gd from "./assets/gd.jpg";
 import cc from "./assets/cartcases.jpg";
-import gy from "./assets/gayatry.jpg";
+import fh from "./assets/fh.png";
 import translate from "./assets/translate.png";
 import emailjs from "@emailjs/browser";
 
@@ -176,6 +176,20 @@ function App() {
         <span>{english ? "Recent Works" : "Trabajos recientes"}</span>
       </div>
       <div className="portfolio-grid">
+        <a href="http://feriahermana.com/" className="portfolio-item">
+          <div className="portfolio-item__img">
+            <img src={fh} alt="" />
+          </div>
+          <div className="portfolio-item__info">
+            <h3>Feria Hermana (Ecommerce)</h3>
+            <h4>
+              Demo <i class="bx bx-right-arrow-alt"></i>
+            </h4>
+            <h4>
+              Code <i class="bx bxl-github"></i>
+            </h4>
+          </div>
+        </a>
         <a href="https://www.lujanen5.com/" className="portfolio-item">
           <div className="portfolio-item__img">
             <img src={l5} alt="" />
@@ -218,20 +232,6 @@ function App() {
             </a>
           </div>
         </a>
-        <a href="#3" className="portfolio-item">
-          <div className="portfolio-item__img">
-            <img src={gy} alt="" />
-          </div>
-          <div className="portfolio-item__info">
-            <h3>Gayatry (Ecommerce)</h3>
-            <h4>
-              Demo <i class="bx bx-right-arrow-alt"></i>
-            </h4>
-            <h4>
-              Code <i class="bx bxl-github"></i>
-            </h4>
-          </div>
-        </a>
       </div>
       <div id="Knowledge" className="knowledge-title">
         <h2>{english ? "Knowledge" : "Conocimientos"}</h2>
@@ -244,11 +244,11 @@ function App() {
             <li>CSS/SASS</li>
             <li>Bootstrap</li>
             <li>Tailwind Css</li>
-            <li>Javascript</li>
+            <li>Javascript / Typescript</li>
             <li>React.js</li>
-            <li>Redux</li>
             <li>Context API</li>
             <li>Next js</li>
+            <li>React native</li>
           </ul>
         </div>
         <div className="knowledgebox-2">
