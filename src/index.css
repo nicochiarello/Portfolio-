@@ -10,7 +10,6 @@ body {
   background-color: rgba(19, 20, 50, 1);
   color: rgba(255, 255, 255, 1);
   width: 100vw;
-  overflow-x: hidden;
 }
 
 a {
@@ -30,7 +29,8 @@ a i:hover {
   color: #776fd2;
 }
 .nav {
-  width: 30rem;
+  width: 80%;
+  max-width: 30rem;
   height: 4rem;
   background-color: rgba(49, 51, 107, 0.61);
   backdrop-filter: blur(5px);
@@ -220,6 +220,7 @@ a i:hover {
 .img-container {
   height: 60%;
   width: 35rem;
+  max-width: 100%;
   border-radius: 150px 150px 0px 0px;
   overflow: hidden;
 }
@@ -399,7 +400,7 @@ a i:hover {
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(2, 40rem);
-  grid-template-rows: repeat(2, 30rem);
+  grid-template-rows: repeat(2, 1fr);
   height: fit-content;
   align-items: center;
   justify-content: center;
@@ -1086,8 +1087,6 @@ a i:hover {
 @media (max-width: 840px) and (min-width: 480px) {
   .navbar {
     background-color: #212c43;
-
-    width: 100vw;
   }
   .intro {
     margin-top: 5rem;
@@ -1121,8 +1120,9 @@ a i:hover {
   }
 
   .portfolio-item {
-    width: 90%;
-    height: 30rem;
+    width: 100%;
+    max-width: 600px;
+    height: fit-content;
   }
   .portfolio-item__img {
     height: 22rem;

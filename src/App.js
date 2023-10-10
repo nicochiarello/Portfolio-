@@ -2,16 +2,17 @@ import "./App.css";
 import React, { useState } from "react";
 import profile from "./perfil.jpg";
 import emoji from "./emoji.jpg";
-import l5 from "./assets/l5.jpg";
-import gd from "./assets/gd.jpg";
-import cc from "./assets/cartcases.jpg";
-import fh from "./assets/fh.png";
 import translate from "./assets/translate.png";
 import emailjs from "@emailjs/browser";
+import ProjectsList from "./components/projects/ProjectsList";
 
 function App() {
   const [btnOpened, setBtnOpened] = useState(false);
   const [english, setEnglish] = useState(true);
+
+  let cv = english
+    ? "https://drive.google.com/file/d/15xIKMdOdfcmiyGtbBAAoASXLOFRB3oxb/view?usp=sharing"
+    : "https://drive.google.com/file/d/1ca1KjhpOV-gVkH1HvWmyl92I3bpg9gSe/view?usp=sharing";
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -113,11 +114,7 @@ function App() {
         <p>{english ? "Hello I´m" : "Hola Soy"}</p>
         <h1>Nicolas Chiarello</h1>
         <span>Fullstack MERN Developer</span>
-        <a
-          target="_blank"
-          href="https://drive.google.com/file/d/104FPOT9AwgD2TSODTGM4uFPVhBDEbcnk/view?usp=sharing"
-          className="btn1"
-        >
+        <a target="_blank" href={cv} className="btn1">
           {english ? "Download CV" : "Descargar CV"}
         </a>
         <div className="btn2">
@@ -127,6 +124,8 @@ function App() {
           <img src={profile} alt="" />
         </div>
       </div>
+
+      {/* About section */}
 
       <div id="About" className="about-title">
         <h2>{english ? "About" : "Sobre mí"}</h2>
@@ -139,9 +138,9 @@ function App() {
           <div className="about-items-boxes">
             <div className="about-boxes">
               <i class="bx bxs-brain"></i>
-              <p>Freelancer</p>
+              <p>Experience</p>
               <span>
-                {english ? "1+ Year experience" : "1+ años de experiencia"}
+                {english ? "+2 Years experience" : "+2 años de experiencia"}
               </span>
             </div>
             <div className="about-boxes">
@@ -162,77 +161,18 @@ function App() {
                 : "Para mi la programación no es solo un trabajo, lo considero un arte donde puedo crear y plasmar todo tipo de ideas. Disfruto mucho los desafíos que me propone, desde crear una api hasta diseñar todo un front, la programación me brindó grandes aprendizajes y una forma de vivir que verdaderamente me gusta. En esta página presento mi perfil y espero que te guste!"}
             </p>
           </div>
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/104FPOT9AwgD2TSODTGM4uFPVhBDEbcnk/view?usp=sharing"
-            className="btn3"
-          >
+          <a target="_blank" href={cv} className="btn3">
             CV
           </a>
         </div>
       </div>
       <div id="Portfolio" className="portfolio">
         <h2>{english ? "My portfolio" : "Mis proyectos"}</h2>
-        <span>{english ? "Recent Works" : "Trabajos recientes"}</span>
+        <span>{english ? "Recent Projects" : "Trabajos recientes"}</span>
       </div>
-      <div className="portfolio-grid">
-        <a href="http://feriahermana.com/" className="portfolio-item">
-          <div className="portfolio-item__img">
-            <img src={fh} alt="" />
-          </div>
-          <div className="portfolio-item__info">
-            <h3>Feria Hermana (Ecommerce)</h3>
-            <h4>
-              Demo <i class="bx bx-right-arrow-alt"></i>
-            </h4>
-            <h4>
-              Code <i class="bx bxl-github"></i>
-            </h4>
-          </div>
-        </a>
-        <a href="https://www.lujanen5.com/" className="portfolio-item">
-          <div className="portfolio-item__img">
-            <img src={l5} alt="" />
-          </div>
-          <div className="portfolio-item__info">
-            <h3>Lujan en 5' Newspaper</h3>
-            <h4>
-              Demo <i class="bx bx-right-arrow-alt"></i>
-            </h4>
-            <a href="https://github.com/nicochiarello/Lujan-en-5">
-              Code <i class="bx bxl-github"></i>
-            </a>
-          </div>
-        </a>
-        <a href="https://guitardev.herokuapp.com/" className="portfolio-item">
-          <div className="portfolio-item__img">
-            <img src={gd} alt="" />
-          </div>
-          <div className="portfolio-item__info">
-            <h3>GuitarDev (Ecommerce)</h3>
-            <h4>
-              Demo <i class="bx bx-right-arrow-alt"></i>
-            </h4>
-            <a href="https://github.com/nicochiarello/GuitarDev-Version-Final">
-              Code <i class="bx bxl-github"></i>
-            </a>
-          </div>
-        </a>
-        <a href="https://cart-cases.netlify.app/" className="portfolio-item">
-          <div className="portfolio-item__img">
-            <img src={cc} alt="" />
-          </div>
-          <div className="portfolio-item__info">
-            <h3>Cart Cases</h3>
-            <h4>
-              Demo <i class="bx bx-right-arrow-alt"></i>
-            </h4>
-            <a href="https://github.com/nicochiarello/CartCases-Final">
-              Code <i class="bx bxl-github"></i>
-            </a>
-          </div>
-        </a>
-      </div>
+
+      <ProjectsList />
+
       <div id="Knowledge" className="knowledge-title">
         <h2>{english ? "Knowledge" : "Conocimientos"}</h2>
       </div>
@@ -258,8 +198,8 @@ function App() {
             <li>Express.js</li>
             <li>SQL/NoSQL</li>
             <li>MongoDB</li>
-            <li>EJS</li>
-            <li>JWT</li>
+            <li>Docker</li>
+            <li>Linux</li>
             <li>REST APIs</li>
             <li>Websockets</li>
             <li>GraphQL</li>
@@ -305,7 +245,7 @@ function App() {
             <input
               type="text"
               name="name"
-              placeholder="Insert your name"
+              placeholder={english ? "Insert your name" : "Ingrese su nombre"}
               className="form-name"
             ></input>
 
@@ -313,7 +253,7 @@ function App() {
           </div>
           <div className="name-form-container">
             <input
-              placeholder="Insert your email"
+              placeholder={english ? "Insert your email" : "Ingrese su email" }
               className="form-name"
               type="text"
               name="email"
