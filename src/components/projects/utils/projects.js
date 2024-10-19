@@ -1,7 +1,7 @@
-import l5Image from '../../../assets/l5.jpg'
-import gayatry from '../../../assets/gayatry.jpg'
-import dillo from '../../../assets/dillo.jpg'
-import finanzas from '../../../assets/finanzas-app.png'
+import gayatry from "../../../assets/gayatry.jpg";
+import dillo from "../../../assets/dillo.jpg";
+import finanzas from "../../../assets/finanzas-app.png";
+import iaNews from "../../../assets/ia-news.png";
 
 export const projects = [
   {
@@ -15,9 +15,9 @@ export const projects = [
     img: finanzas,
   },
   {
-    title: "Lujan en 5' (newspaper)",
-    href: "https://lujanen5.com/",
-    img: l5Image,
+    title: "IA News",
+    href: "https://ia-news.vercel.app/",
+    img: iaNews,
   },
   {
     title: "Gayatry (e-commerce)",

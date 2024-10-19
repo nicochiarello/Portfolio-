@@ -61,7 +61,7 @@ a i:hover {
   cursor: pointer;
 }
 
-.translate:hover{
+.translate:hover {
   color: #776fd2;
 }
 .translate-icon {
@@ -169,7 +169,7 @@ a i:hover {
   cursor: pointer;
   color: #776fd2;
 }
-.btn1 a{
+.btn1 a {
   color: #776fd2;
 }
 
@@ -177,14 +177,12 @@ a i:hover {
   color: white;
   /* background-color: #776fd2; */
   border: 3px solid white;
-  background-color:#776fd2 ;
+  background-color: #776fd2;
 }
-.btn1:hover a{
+.btn1:hover a {
   color: white;
   /* background-color: #776fd2; */
-  
 }
-
 
 .btn2 {
   width: 15rem;
@@ -202,7 +200,7 @@ a i:hover {
   font-size: 30px;
   line-height: 35px;
 }
-.btn2 a{
+.btn2 a {
   color: rgba(0, 0, 0, 1);
 }
 
@@ -211,10 +209,9 @@ a i:hover {
   background-color: #776fd2;
   border: 3px solid white;
 }
-.btn2:hover a{
+.btn2:hover a {
   color: white;
   background-color: #776fd2;
-  
 }
 
 .img-container {
@@ -804,6 +801,94 @@ a i:hover {
   width: 100%;
 }
 
+#experience {
+  width: 100%;
+  background-color: #212c43;
+  padding: 60px 20px;
+  border-radius: 14px;
+  max-width: 1220px;
+  margin: 3rem auto;
+  color: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+}
+
+#experience h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #e0e0e0;
+  position: relative;
+}
+
+#experience h2::after {
+  content: "✨";
+  font-size: 1.5em;
+  position: absolute;
+  right: -30px;
+  top: -10px;
+}
+
+.job {
+  background-color: #2a3655;
+  border: 1px solid #776fd2;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.job h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.job h3::before {
+  content: "💻";
+  margin-right: 10px;
+}
+
+.job p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #c5c5c5;
+}
+
+.job strong {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  #experience {
+    padding: 40px 15px;
+  }
+
+  #experience h2 {
+    font-size: 2em;
+  }
+
+  .job {
+    padding: 20px;
+  }
+
+  .job h3 {
+    font-size: 1.5em;
+  }
+
+  .job p {
+    font-size: 1em;
+  }
+}
+
 @media (min-width: 840px) and (max-width: 1400px) {
   .about-container {
     flex-direction: column;
@@ -900,25 +985,25 @@ a i:hover {
   .intro {
     padding-top: 0%;
   }
-    .nav {
-  width: 90vw;
-  height: 4rem;
-  background-color: rgba(49, 51, 107, 0.61);
-  backdrop-filter: blur(5px);
-  box-shadow: 5px 8px 60px 0 rgba(103, 101, 110, 0.61);
-  position: fixed;
-  bottom: 1%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100000;
-}
-.language{
-  display: none;
-}
+  .nav {
+    width: 90vw;
+    height: 4rem;
+    background-color: rgba(49, 51, 107, 0.61);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 8px 60px 0 rgba(103, 101, 110, 0.61);
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+  }
+  .language {
+    display: none;
+  }
   .intro p {
     font-size: 22px;
   }
@@ -1054,7 +1139,7 @@ a i:hover {
     list-style: none;
     font-size: 35px;
   }
-  .navbar-mobile-items a{
+  .navbar-mobile-items a {
     color: white;
   }
 
@@ -1077,7 +1162,7 @@ a i:hover {
     list-style: none;
     border-top: 1px solid white;
   }
-  .btn-form{
+  .btn-form {
     width: fit-content;
     padding-left: 10%;
     padding-right: 10%;
@@ -1175,7 +1260,6 @@ a i:hover {
     display: flex;
     justify-content: center;
   }
-  
 }
 
 @media (min-width: 480px) and (max-width: 700px) {
@@ -1212,6 +1296,4 @@ a i:hover {
     list-style: none;
     border-top: 1px solid white;
   }
-
-
 }

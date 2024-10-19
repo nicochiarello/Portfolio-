@@ -10,6 +10,13 @@ function App() {
   const [btnOpened, setBtnOpened] = useState(false);
   const [english, setEnglish] = useState(true);
 
+  const locations = {
+    about_description: {
+      en: "I firmly believe that programming is not just a job, but an art—a way to bring ideas to life and build solutions. I enjoy the challenges it presents, from designing a full front-end experience to building APIs. Programming has given me valuable lessons and shaped a way of life that I am passionate about. On this page, you'll find a glimpse of my professional profile. I hope you enjoy it!",
+      es: "Para mí, la programación no es solo un trabajo, sino un arte: una forma de dar vida a ideas y construir soluciones. Disfruto de los desafíos que presenta, desde diseñar una experiencia completa de front-end hasta construir APIs. La programación me ha brindado valiosas lecciones y ha dado forma a una forma de vida que me apasiona. En esta página, encontrarás un vistazo a mi perfil profesional. ¡Espero que lo disfrutes!",
+    },
+  };
+
   let cv = english
     ? "https://drive.google.com/file/d/15xIKMdOdfcmiyGtbBAAoASXLOFRB3oxb/view?usp=sharing"
     : "https://drive.google.com/file/d/1ca1KjhpOV-gVkH1HvWmyl92I3bpg9gSe/view?usp=sharing";
@@ -113,7 +120,7 @@ function App() {
       <div className="intro">
         <p>{english ? "Hello I´m" : "Hola Soy"}</p>
         <h1>Nicolas Chiarello</h1>
-        <span>Fullstack MERN Developer</span>
+        <span>Fullstack Developer</span>
         <a target="_blank" href={cv} className="btn1">
           {english ? "Download CV" : "Descargar CV"}
         </a>
@@ -140,7 +147,7 @@ function App() {
               <i class="bx bxs-brain"></i>
               <p>Experience</p>
               <span>
-                {english ? "+2 Years experience" : "+2 años de experiencia"}
+                {english ? "+3 Years experience" : "+3 años de experiencia"}
               </span>
             </div>
             <div className="about-boxes">
@@ -155,11 +162,7 @@ function App() {
             </div>
           </div>
           <div className="about-text">
-            <p>
-              {english
-                ? "I strongly believe programming is not just a job, I consider it to be an art, where I can build and represent all sorts of ideas. I really enjoy the challenges that it proposes to me since building an API to designing an entire front. Programming brought me great learnings and a whole new way of living which I love. On this page I will show you some of my profesional profile... hope you like it!"
-                : "Para mi la programación no es solo un trabajo, lo considero un arte donde puedo crear y plasmar todo tipo de ideas. Disfruto mucho los desafíos que me propone, desde crear una api hasta diseñar todo un front, la programación me brindó grandes aprendizajes y una forma de vivir que verdaderamente me gusta. En esta página presento mi perfil y espero que te guste!"}
-            </p>
+            <p>{locations.about_description[english ? "en" : "es"]}</p>
           </div>
           <a target="_blank" href={cv} className="btn3">
             CV
@@ -173,6 +176,35 @@ function App() {
 
       <ProjectsList />
 
+      <div id="Portfolio" className="portfolio">
+        <h2>Work Experience</h2>
+      </div>
+
+      <section id="experience">
+        <div class="job">
+          <h3>🚀 Dillostores USA - Frontend Developer</h3>
+          <p>
+            <strong>Duration:</strong> 2022 - Present
+          </p>
+          <p>
+            Currently working as a frontend developer, contributing to the
+            development of web and mobile applications. I specialize in creating
+            responsive UIs and enhancing user experiences.
+          </p>
+        </div>
+        <div class="job">
+          <h3>🌐 Freelancer</h3>
+          <p>
+            <strong>Duration:</strong> 2021 - 2022
+          </p>
+          <p>
+            I worked on various projects as a freelancer, handling both frontend
+            and backend development, collaborating with clients to deliver
+            customized solutions.
+          </p>
+        </div>
+      </section>
+
       <div id="Knowledge" className="knowledge-title">
         <h2>{english ? "Knowledge" : "Conocimientos"}</h2>
       </div>
@@ -180,28 +212,28 @@ function App() {
         <div className="knowledgebox-1">
           <h4>Frontend</h4>
           <ul>
-            <li>Html</li>
-            <li>CSS/SASS</li>
-            <li>Bootstrap</li>
-            <li>Tailwind Css</li>
             <li>Javascript / Typescript</li>
-            <li>React.js</li>
-            <li>Context API</li>
             <li>Next js</li>
+            <li>React.js</li>
+            <li>Angular</li>
+            <li>Flutter</li>
             <li>React native</li>
+            <li>Html/CSS/SAAS</li>
+            <li>Bootstrap</li>
+            <li>Tailwind CSS</li>
           </ul>
         </div>
         <div className="knowledgebox-2">
           <h4>Backend</h4>
           <ul>
+            <li>NestJS</li>
+            <li>Microservices</li>
             <li>NodeJS</li>
             <li>Express.js</li>
             <li>SQL/NoSQL</li>
-            <li>MongoDB</li>
             <li>Docker</li>
             <li>Linux</li>
             <li>REST APIs</li>
-            <li>Websockets</li>
             <li>GraphQL</li>
           </ul>
         </div>
@@ -253,7 +285,7 @@ function App() {
           </div>
           <div className="name-form-container">
             <input
-              placeholder={english ? "Insert your email" : "Ingrese su email" }
+              placeholder={english ? "Insert your email" : "Ingrese su email"}
               className="form-name"
               type="text"
               name="email"
